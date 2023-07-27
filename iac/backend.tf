@@ -4,6 +4,6 @@ terraform {
     bucket         = "terraform-remote-daniel"
     key            = "rentzone-app/terraform.tfstate"
     region         = "us-east-1" 
-    dynamodb_table = "terraform-state-lock"
+    dynamodb_table = "Terraform-state-lock"
   }
 }
