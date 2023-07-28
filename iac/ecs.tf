@@ -48,7 +48,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
       environmentFiles = [
         {
           value = "arn:aws:s3:::${var.project_name}-${var.env_file_bucket_name}/${var.env_file_name}"
-          type  = "s3"
+          type  = "s3" 
         }
       ]
 
