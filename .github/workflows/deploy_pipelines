@@ -2,7 +2,7 @@ name: Deploy Pipeline
 
 on:
   push:
-    branches: [main] #refers to my repository
+    branches: [main] 
 
 env:
   AWS_  ACCESS_KEY_ID: $ {{ secrets.AWS_ACCESS_KEY_ID }}
