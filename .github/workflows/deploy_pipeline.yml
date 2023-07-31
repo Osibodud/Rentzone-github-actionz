@@ -2,20 +2,20 @@ name: Deploy Pipeline
 
 on:
   push:
-    branches: [main] 
+    branches: [main]  
 
 env:
-  AWS_  ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: us-east-1
 
 jobs:
-  # Configure AWS credentialss 
+  # Configure AWS credentials is the jobs name
   configure_aws_credentials:
-    name: Configure AWS credentials
+    name: configure AWS credentials
     runs-on: ubuntu-latest
     steps:     
-      - name: Configure AWS credentials
+      - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1-node16 
         with: 
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
