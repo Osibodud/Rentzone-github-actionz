@@ -144,7 +144,7 @@ jobs:
   create_ecr_repository:
     name: Create ECR repository
     needs: 
-      -
+      
       - configure_aws_credentials 
       - deploy_aws_infrastructure
     if: needs.deploy_aws_infrastructure.outputs.terraform_action != 'destroy'
@@ -166,4 +166,6 @@ jobs:
           IMAGE_NAME: ${{ needs.deploy_aws_infrastructure.outputs.image_name }}
         if: env.repo_name != env.IMAGE_NAME
         run: |
-          aws ecr create-repository --repository-name ${{ ENV.IMAGE_NAME }}
+          aws ecr create-repository --repository-name ${{ ENV.IMAGE_NAME }} 
+       
+
